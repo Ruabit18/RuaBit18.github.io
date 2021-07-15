@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="简介&amp;emsp;&amp;emsp;在该项目中，我们提供了集群监控、硬盘故障预测的实现，甲方进一步提出要能在预测出故障后方便地进行磁盘数据转移。由于之前没研究过数据迁移和故障恢复，所以只能从头慢慢摸索。目前的大致思路就是：将源硬盘（快故障的硬盘）的数据进行压缩；将目的硬盘（正常硬盘）格式化并进行分区；在源节点与目的节点之间进行“点对点”的数据传输；最后在目的硬盘上恢复数据。 &amp;emsp;&amp;emsp;目前仅">
+  <meta name="description" content="简介&amp;emsp;&amp;emsp;在该项目中，我们提供了集群监控、硬盘故障预测的实现，甲方进一步提出要能在预测出故障后方便地进行磁盘数据转移。由于之前没研究过数据迁移和故障恢复，所以只能从头慢慢摸索。目前的大致思路就是：将源硬盘（快故障的硬盘）的数据进行压缩；将目的硬盘（正常硬盘）格式化并进行分区；在源节点与目的节点之间进行“点对点”的数据传输；最后在目的硬盘上恢复数据。项目地址在这里。 &amp;emsp;&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于故障硬盘数据迁移的粗略研究——硬盘信息采集">
 <meta property="og:url" content="https://ruabit18.github.io/2021/07/06/%E5%85%B3%E4%BA%8E%E6%95%85%E9%9A%9C%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E7%9A%84%E7%B2%97%E7%95%A5%E7%A0%94%E7%A9%B6%E2%80%94%E2%80%94%E7%A1%AC%E7%9B%98%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/index.html">
 <meta property="og:site_name" content="十八 · 杂记">
-<meta property="og:description" content="简介&amp;emsp;&amp;emsp;在该项目中，我们提供了集群监控、硬盘故障预测的实现，甲方进一步提出要能在预测出故障后方便地进行磁盘数据转移。由于之前没研究过数据迁移和故障恢复，所以只能从头慢慢摸索。目前的大致思路就是：将源硬盘（快故障的硬盘）的数据进行压缩；将目的硬盘（正常硬盘）格式化并进行分区；在源节点与目的节点之间进行“点对点”的数据传输；最后在目的硬盘上恢复数据。 &amp;emsp;&amp;emsp;目前仅">
+<meta property="og:description" content="简介&amp;emsp;&amp;emsp;在该项目中，我们提供了集群监控、硬盘故障预测的实现，甲方进一步提出要能在预测出故障后方便地进行磁盘数据转移。由于之前没研究过数据迁移和故障恢复，所以只能从头慢慢摸索。目前的大致思路就是：将源硬盘（快故障的硬盘）的数据进行压缩；将目的硬盘（正常硬盘）格式化并进行分区；在源节点与目的节点之间进行“点对点”的数据传输；最后在目的硬盘上恢复数据。项目地址在这里。 &amp;emsp;&amp;">
 <meta property="og:locale" content="ch_ZN">
 <meta property="og:image" content="https://ruabit18.github.io/2021/07/06/%E5%85%B3%E4%BA%8E%E6%95%85%E9%9A%9C%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E7%9A%84%E7%B2%97%E7%95%A5%E7%A0%94%E7%A9%B6%E2%80%94%E2%80%94%E7%A1%AC%E7%9B%98%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/https:/cdn.jsdelivr.net/gh/Ruabit18/Ruabit-Images@latest/blog-img/DE_pic_1.webp">
 <meta property="article:published_time" content="2021-07-06T04:07:13.000Z">
-<meta property="article:modified_time" content="2021-07-15T07:51:18.101Z">
+<meta property="article:modified_time" content="2021-07-15T07:55:46.388Z">
 <meta property="article:author" content="Ruabit18">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ruabit18.github.io/2021/07/06/%E5%85%B3%E4%BA%8E%E6%95%85%E9%9A%9C%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E7%9A%84%E7%B2%97%E7%95%A5%E7%A0%94%E7%A9%B6%E2%80%94%E2%80%94%E7%A1%AC%E7%9B%98%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/https:/cdn.jsdelivr.net/gh/Ruabit18/Ruabit-Images@latest/blog-img/DE_pic_1.webp">
@@ -154,6 +154,12 @@
         
           
           
+            <a class="list-group-item" href="/2021/07/15/%E5%85%B3%E4%BA%8E%E7%A1%AC%E7%9B%98%E6%95%85%E9%9A%9C%E9%A2%84%E6%B5%8B%E7%9A%84%E7%A0%94%E7%A9%B6%E2%80%94%E2%80%94-%E9%A2%84%E6%B5%8B%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E7%9A%84%E4%B8%80%E7%82%B9%E5%BF%83%E5%BE%97/"><i class="fa  fa-book"></i> 关于硬盘故障预测的研究——[预测模型构建的一点心得]</a>
+            
+          
+        
+          
+          
             <a class="list-group-item" href="/2021/07/06/%E5%85%B3%E4%BA%8E%E6%95%85%E9%9A%9C%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E7%9A%84%E7%B2%97%E7%95%A5%E7%A0%94%E7%A9%B6%E2%80%94%E2%80%94%E7%A1%AC%E7%9B%98%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86/"><i class="fa  fa-book"></i> 关于故障硬盘数据迁移的粗略研究——硬盘信息采集</a>
             
           
@@ -197,7 +203,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1626335478101"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1626335746388"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
@@ -205,7 +211,7 @@
                     </div>
                 
                 <hr />
-                <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>&emsp;&emsp;在该项目中，我们提供了集群监控、硬盘故障预测的实现，甲方进一步提出要能在预测出故障后方便地进行磁盘数据转移。由于之前没研究过数据迁移和故障恢复，所以只能从头慢慢摸索。目前的大致思路就是：将源硬盘（快故障的硬盘）的数据进行压缩；将目的硬盘（正常硬盘）格式化并进行分区；在源节点与目的节点之间进行“点对点”的数据传输；最后在目的硬盘上恢复数据。</p>
+                <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>&emsp;&emsp;在该项目中，我们提供了集群监控、硬盘故障预测的实现，甲方进一步提出要能在预测出故障后方便地进行磁盘数据转移。由于之前没研究过数据迁移和故障恢复，所以只能从头慢慢摸索。目前的大致思路就是：将源硬盘（快故障的硬盘）的数据进行压缩；将目的硬盘（正常硬盘）格式化并进行分区；在源节点与目的节点之间进行“点对点”的数据传输；最后在目的硬盘上恢复数据。<a target="_blank" rel="noopener" href="https://github.com/Ruabit18/Data_Escape">项目地址在这里</a>。</p>
 <p>&emsp;&emsp;目前仅在 Windows 系统上进行了实现，Linux 系统上由于 dd 、scp 等命令的存在，可能实现起来更加简单。</p>
 <h1 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h1><h2 id="一、在-Java-程序中调用-Windows-系统命令"><a href="#一、在-Java-程序中调用-Windows-系统命令" class="headerlink" title="一、在 Java 程序中调用 Windows 系统命令"></a>一、在 Java 程序中调用 Windows 系统命令</h2><ul>
 <li><p><strong>执行系统命令</strong></p>
@@ -335,6 +341,10 @@
                     <a title=" 使用flask+html实现的个人用数据分析程序" href="/2021/07/05/使用flask-html实现的个人用数据分析程序/">&lt; 上一篇</a>
                 </div>
                 
+                
+                <div class="nav-next clearfix">
+                    <a title=" 关于硬盘故障预测的研究——[预测模型构建的一点心得]" href="/2021/07/15/关于硬盘故障预测的研究——-预测模型构建的一点心得/">下一篇 &gt;</a>
+                </div>
                 
             </nav>
         
