@@ -24,7 +24,7 @@
 <meta property="og:locale" content="ch_ZN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Ruabit18/Ruabit-Images@latest/blog-img/logo.webp">
 <meta property="article:published_time" content="2021-07-15T07:53:55.000Z">
-<meta property="article:modified_time" content="2021-07-15T08:35:55.706Z">
+<meta property="article:modified_time" content="2021-09-01T06:52:52.501Z">
 <meta property="article:author" content="Ruabit18">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Ruabit18/Ruabit-Images@latest/blog-img/logo.webp">
@@ -136,7 +136,7 @@
         <span class="toc-progress-bar"></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%B0%E7%8A%B6"><span class="toc-text">现状</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-text">数据预处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%B0%83%E4%BC%98"><span class="toc-text">模型调优</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%A8%A1%E5%9E%8B%E6%9C%89%E6%95%88%E6%80%A7%E7%9A%84%E6%80%9D%E8%80%83"><span class="toc-text">关于模型有效性的思考</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%B0%E7%8A%B6"><span class="toc-text">现状</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E6%A8%A1%E5%9E%8B%E8%B0%83%E4%BC%98%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">数据预处理与模型调优的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%A8%A1%E5%9E%8B%E6%9C%89%E6%95%88%E6%80%A7%E7%9A%84%E6%80%9D%E8%80%83"><span class="toc-text">关于模型有效性的思考</span></a></li></ol>
     </div>
 </aside>
                 
@@ -194,7 +194,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            653
+                            667
                         
                         字
                     </li>
@@ -203,24 +203,25 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1626338155706"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1630479172501"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                     <div class="kratos-post-inner-toc">
-                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%B0%E7%8A%B6"><span class="toc-number">2.</span> <span class="toc-text">现状</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">数据预处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%B0%83%E4%BC%98"><span class="toc-number">4.</span> <span class="toc-text">模型调优</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%A8%A1%E5%9E%8B%E6%9C%89%E6%95%88%E6%80%A7%E7%9A%84%E6%80%9D%E8%80%83"><span class="toc-number">5.</span> <span class="toc-text">关于模型有效性的思考</span></a></li></ol>
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%B0%E7%8A%B6"><span class="toc-number">2.</span> <span class="toc-text">现状</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E6%A8%A1%E5%9E%8B%E8%B0%83%E4%BC%98%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">3.</span> <span class="toc-text">数据预处理与模型调优的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%A8%A1%E5%9E%8B%E6%9C%89%E6%95%88%E6%80%A7%E7%9A%84%E6%80%9D%E8%80%83"><span class="toc-number">4.</span> <span class="toc-text">关于模型有效性的思考</span></a></li></ol>
                     </div>
                 
                 <hr />
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&emsp;&emsp;研究生阶段入坑了硬盘故障预测的相关研究，并在导师与博士学长的引导下参与了几个大大小小的相关项目，这里记录一下学习心得，并提出一些自己的疑问，在留给自己以后温习的同时也希望能对看到这篇博客的人有些许帮助，不足之处欢迎不吝赐教，疑问处若有共鸣也希望能讨论交流！</p>
 <h1 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h1><p>&emsp;&emsp;现在绝大部分关于硬盘故障预测的研究都或多或少使用了人工智能的技术，包括：</p>
 <ol>
-<li>传统机器学习方法，在我读过的大部分论文中， RandomForest（随机森林）都有很好的表现，也是我当前常用的基础模型。</li>
+<li>传统机器学习方法，在我读过的大部分论文中， <a target="_blank" rel="noopener" href="https://journals.sagepub.com/doi/full/10.1177/1550147718806480">RandomForest</a>（随机森林）都有很好的表现，也是我当前常用的基础模型。</li>
 <li>神经网络，如 LSTM 等，这部分我涉猎很少，就不献丑了。</li>
-<li>特殊的神经网络模型，如 GAN，这也是我下一步准备的一个研究方向，目前已有研究者通过使用 GAN 巧妙地解决硬盘故障预测中的<strong>“冷启动”</strong>问题，我觉得这在实际的生产环境中有较高的应用价值，关于这点我会专门写一篇博客进行讨论并验证其实用性，当然啥时候能写出来也完全取决于我的研究进度了。。。。</li>
+<li>特殊的神经网络模型，如 GAN，这也是我下一步准备的一个研究方向，目前已有研究者通过使用 GAN 巧妙地解决硬盘故障预测中的<strong>“<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/8988672">冷启动</a>”</strong>问题，我觉得这在实际的生产环境中有较高的应用价值，关于这点我会专门写一篇博客进行讨论并验证其实用性，当然啥时候能写出来也完全取决于我的研究进度了。。。。</li>
 </ol>
 <p>&emsp;&emsp;既然使用了人工智能模型，那必然会有相应的数据集。目前来说，最常用的、且与硬盘故障强相关的特征属性就是<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xqzt/p/5512075.html">SMART</a>。当然也不断有研究者提出新的与硬盘故障相关的特征属性，如硬盘故障的时空局域性等等，这里不再赘述。</p>
 <p>&emsp;&emsp;这篇文章主要基于传统机器学习方法与硬盘的 SMART 属性来展开，演示模型为 RandomForest，数据集使用开源数据集 <a target="_blank" rel="noopener" href="https://www.backblaze.com/b2/hard-drive-test-data.html">BackBlaze</a>。</p>
-<h1 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h1><h1 id="模型调优"><a href="#模型调优" class="headerlink" title="模型调优"></a>模型调优</h1><h1 id="关于模型有效性的思考"><a href="#关于模型有效性的思考" class="headerlink" title="关于模型有效性的思考"></a>关于模型有效性的思考</h1>
+<h1 id="数据预处理与模型调优的关系"><a href="#数据预处理与模型调优的关系" class="headerlink" title="数据预处理与模型调优的关系"></a>数据预处理与模型调优的关系</h1><p>​        </p>
+<h1 id="关于模型有效性的思考"><a href="#关于模型有效性的思考" class="headerlink" title="关于模型有效性的思考"></a>关于模型有效性的思考</h1>
             </div>
             
                 <div class="kratos-copyright text-center clearfix">
@@ -311,7 +312,7 @@
                         
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-07-15</span>
+                    <span>最后编辑：2021-09-01</span>
                     </div>
                 </div>
             </footer>
